@@ -1,4 +1,4 @@
-public class BioSwutchTwo {
+public class BioSwitchTwo {
     // 상수
     public static final int PHYSICAL = 23;
     public static final int EMOTIONAL = 28;
