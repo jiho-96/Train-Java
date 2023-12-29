@@ -20,7 +20,7 @@ public static void main(String[] args){
         Calendar cal = Calendar.getInstance();
         int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
         for (int i=1; i<=lastDay; i++){
-            cal.set(Calendar.DAY_OF_MONTH, i);// 일부터 마지막날 까지
+            cal.set(Calendar.DAY_OF_MONTH, i);// 1 일부터 마지막날 까지
             if(isRest(cal)){
                 System.out.println(toYMD(cal)+"is Rest Day");
             }
