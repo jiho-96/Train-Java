@@ -36,4 +36,27 @@ public class MatrixUtil {
         }
         return new Matrix(c);
     }
+
+    public static Matrix toOneTwo(Matrix matrix, int rows, int columns) {
+        return new Matrix(matrix);
+    }
+
+    public static Matrix toTwoOne(Matrix matrix) {
+        double[][] twoDimensionalArray = matrix.getMatrix();
+        int rows = twoDimensionalArray.length;
+        int columns = twoDimensionalArray[0].length;
+        double[] oneDimensionalArray = new double[rows * columns];
+        int index = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                oneDimensionalArray[index++] = twoDimensionalArray[i][j];
+            }
+        }
+        // 1차원 배열을 가지고 새로운 Matrix 객체 생성
+        double[][] oneTwoArray = new double[1][oneDimensionalArray.length];
+        for (int i = 0; i < oneDimensionalArray.length; i++) {
+            oneTwoArray[0][i] = oneDimensionalArray[i];
+        }
+        return new Matrix(oneTwoArray);
+    }
 }
